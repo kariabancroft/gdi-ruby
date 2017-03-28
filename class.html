@@ -49,7 +49,7 @@
         <section>
           <img src="img/gdi_logo_badge.png">
           <h3>Intro to Ruby</h3>
-          <h4>Class 1</h4>
+          <h4>Class</h4>
         </section>
         <section>
           <h3>Welcome!</h3>
@@ -66,11 +66,6 @@
             </ul>
           </div>
         </section>
-        <!-- Homework Review - 10 min -->
-        <section>
-          <h3>Homework Discussion</h3>
-          <p>How was last week's homework? Do you have any questions or concepts that you'd like to discuss?</p>
-        </section>
         <!-- Setting the Stage - 10 min -->
         <section>
           <h3>What we will cover today</h3>
@@ -79,6 +74,11 @@
             <li class="fragment">Why Ruby?</li>
             <li class="fragment">Variables, Arithmetic & Objects</li>
             <li class="fragment">Methods and Error Messages</li>
+          </ul>
+          <p class="fragment green">Optional</p>
+          <ul>
+              <li class="fragment">Loops</li>
+              <li class="fragment">Collections</li>
           </ul>
         </section>
         <section>
@@ -107,7 +107,7 @@ for(int i = 0; i < 5; i++)
             </pre>
             <li class="fragment">The community is large, active and interested in helping others learn.</li>
             <li class="fragment">You can get a web app off the ground quickly.</li>
-            <li class="fragment">You can make a lucrative career out of it.</li>
+            <!-- <li class="fragment">You can make a lucrative career out of it.</li> -->
             <li class="fragment">Using Ruby will cost you $0.</li>
           </ul>
         </section>
@@ -128,8 +128,8 @@ for(int i = 0; i < 5; i++)
             <li>LivingSocial</li>
             <li>Groupon</li>
             <li>Basecamp</li>
-            <li>Github</li>
-            <li>#2 in 2014 on <a href="http://adambard.com/blog/top-github-languages-for-2013-so-far/">github</a></li>
+            <li>GitHub</li>
+            <li>#4 in 2016 on <a href="https://octoverse.github.com/">GitHub</a></li>
             <li>More <a href="https://www.ruby-lang.org/en/documentation/success-stories/">Success Stories</a></li>
           </ul>
         </section>
@@ -197,13 +197,12 @@ days_alive = age * days_in_year
         <section>
           <h3>Ruby's Variables</h3>
           <ul>
-            <li class="fragment">Ruby has three kinds of variables, one kind of constant and exactly two pseudo-variables.</li>
-            <li class="fragment">A local variable starts with a lower case letter or an underscore character (_) and consists entirely of letters, numbers and underscores.</li>
+            <!-- <li class="fragment">Ruby has three kinds of variables, one kind of constant and exactly two pseudo-variables.</li> -->
+            <li class="fragment">A local variable usually starts with a lower case letter and consists entirely of letters, numbers and underscores.</li>
           </ul>
           <pre><code contenteditable class="ruby fragment">
 age = 50
-_age = 50
-_my_age = 50
+my_age = 50
           </code></pre>
         </section>
         <section>
@@ -237,7 +236,7 @@ age = 40
 occupation = "software engineer"
 
 # bad
-occupation_i_always_dreamed_of_having_in_seattle = "software engineer"
+occupation_i_always_dreamed_of_having = "software engineer"
 o = "software engineer"
 1st_occupation = "software engineer"
           </code></pre>
@@ -268,7 +267,7 @@ defined?(name)
           </ul>
           <pre><code contenteditable class="ruby fragment">
 irb> 1.class
-=> Fixnum
+=> Integer
 irb> "Hello".class
 => String
 irb> 1.0022.class
@@ -314,17 +313,17 @@ together
         <section>
           <h3>Numbers</h3>
           <p>Numeric data comes in two types: <strong>Integers</strong> and <strong>Floats</strong></p>
-          <p>Integers are either <strong>Fixnum</strong> or <strong>Bignum</strong>. They do not have decimals.</p>
+          <p>Integers do not have decimals.</p>
           <pre><code contenteditable class="ruby fragment">
-irb> 1_000_000_000_000_000_000.class
- => Fixnum
-irb> 1_000_000_000_000_000_000_000.class
- => Bignum
+irb> 11.class
+ => Integer
+irb> 9999.class
+ => Integer
           </code></pre>
           <p>Floats are numbers with at least one number to the left of a decimal point.</p>
           <pre><code contenteditable class="ruby fragment">
-            irb> 1.001.class
-             => Float
+irb> 1.001.class
+ => Float
           </code></pre>
         </section>
         <section>
@@ -343,7 +342,7 @@ irb> 1_000_000_000_000_000_000_000.class
           <p>How many minutes are in a week?</p>
           <p>How many years old are you if you've been alive 1 million seconds?</p>
         </section>
-        <section>
+        <!-- <section>
           <h3>Symbols</h3>
           <p class="fragment">You can think of symbols as lightweight Strings.</p>
           <p class="fragment">It's good to know these exist, but don't think about them too much for now.</p>
@@ -413,11 +412,11 @@ irb> "2" / 5
 NoMethodError: undefined method `/' for "2":String
             </code>
           </pre>
-        </section>
+        </section>-->
         <section>
           <h3>User Input</h3>
           <ul>
-            <li class="fragment">To obtain user input, use `gets`</li>
+            <li class="fragment">To obtain user input, use `gets.chomp`</li>
             <li class="fragment">To print out information, use `puts`</li>
             <li class="fragment">Let's create our first program together</li>
           </ul>
@@ -426,23 +425,23 @@ NoMethodError: undefined method `/' for "2":String
           <p class="fragment">Put the code below in a file and save it as name.rb</p>
           <pre><code contenteditable class="fragment ruby">
 puts 'Hello there, and what\'s your name?'
-name = gets
-puts 'Your name is ' + name.chomp! + '? What a lovely name!'
+name = gets.chomp
+puts 'Your name is ' + name + '? What a lovely name!'
 puts 'Pleased to meet you, ' + name + '. :)'
           </code></pre>
           <p class="fragment">Run your program from the command line:</p>
           <pre><code class="fragment">
-        ruby name.rb
+ruby name.rb
           </code></pre>
         </section>
         <section>
           <h3>Let's Develop It</h3>
           <ul>
             <li>Write your own program using 'puts' and 'gets' to ask a user for their age and then tell them how old they are in dog years.</li>
-            <li>reminder: 'gets' method returns a string. To do math on it, convert it to an integer with .to_i method.</li>
+            <li>reminder: 'gets.chomp' method returns a string. To do math on it, convert it to an integer with .to_i method.</li>
             <pre><code class="ruby">
-            #1 dog year = 7 human years
-            user_age = gets.to_i
+#1 dog year = 7 human years
+user_age = gets.to_i
             </code></pre>
           </ul>
         </section>
@@ -474,12 +473,159 @@ puts 'Pleased to meet you, ' + name + '. :)'
           <p><strong>Prep:</strong> Read <a href="https://pine.fm/LearnToProgram/?Chapter=06" alt="Chp 6 of Learn to Program">Chapter 6</a> and <a href="https://pine.fm/LearnToProgram/?Chapter=07" alt="Chp 7 of Learn to Program">Chapter 7</a> of Learn To Program- don't try to do the exercises at the end yet, though.</p>
         </section>
 
+<!-- Class 2 -->
+      <section>
+        <h3>Loops</h3>
+        <p>It is often useful to perform a task and to repeat the process until a certain point is reached.</p>
+        <p>The repeated execution of a set of statements is called <strong>iteration</strong>, or, more commonly, a loop.</p>
+        <p>One way to achieve this, is with the <strong>times</strong> loop.</p>
+        <pre><code  class="ruby">
+  x = 1
+  10.times do
+    puts "Loop number #{x}"
+    x = x + 1
+  end
+          </code></pre>
+      </section>
+      <section>
+        <h3>Times Loops</h3>
+        <pre><code  class="ruby">
+  x = 1
+  10.times do
+    puts "Loop number #{x}"
+    x = x + 1
+  end
+        </code></pre>
+        <p>The times loop will repeat the code block beneath it however many times you specify. This creates a <strong>loop</strong>.</p>
+        <p> Without the `x = x + 1` statement, to increment the value of x, the output would be the same every single time.</p>
+      </section>
+
+      <section>
+        <h3>Times loops</h3>
+        <p>Consider the following example that uses a times loop to sing you a song.</p>
+        <pre><code class="fragment ruby">
+      num_bottles = 99
+
+      num_bottles.times.do
+        puts "#{ num_bottles } bottles of beer on the wall,
+        #{ num_bottles } bottles of beer, take one down, pass it
+        around, #{ num_bottles - 1 } bottles of beer on the wall!"
+
+        num_bottles = num_bottles - 1
+      end
+        </code></pre>
+        <p>"#{num_bottles}" is an example of <strong>string interpolation</strong></p>
+      </section>
+
+      <!-- Let's Develop It - 10 minutes -->
+      <section>
+        <h3>Let's Develop It</h3>
+        <ul>
+          <li>Create a program which will create a list of ten random numbers.</li>
+          <li>You can use rand(10) which will generate a random number between 0 and 10.</li>
+          <li>Use a loop!</li>
+          <li>You can use the next slide as an example.</li>
+        </ul>
+        <p class="green">Optional Extension: Take some user input and list that number of random items.</p>
+      </section>
+      <section>
+        <h3>Let's Develop It: Example</h3>
+        <pre><code class="fragment ruby">
+      # loopy.rb
+      num = 1
+
+      10.times do
+        rando = rand(10)
+        puts "#{ num }. #{ rando }"
+
+        num = num + 1
+      end
+        </code></pre>
+        <!-- <p>Learn more about loops in Ruby <a href="http://www.tutorialspoint.com/ruby/ruby_loops.htm" alt="Loops tutorial">here</a>.</p> -->
+      </section>
+
+        <section>
+          <h3>Each loops</h3>
+          <p>The most commonly used type of loop in Ruby is an each loop. It uses the <strong>.each</strong> method to iterate over a collection of elements, doing work to each one.</p>
+
+          <p>First, we need a collection. Sometimes, we use a <strong>range</strong> of numbers to loop over.</p>
+          <pre><code  class="fragment ruby">
+      (5..10).each do |i|
+        puts "Value of i is #{i}"
+      end
+          </code></pre>
+
+        </section>
+
+        <section>
+          <h3>Each loops</h3>
+          <pre><code  class="ruby">
+      (5..10).each do |i|
+        puts "Value of i is #{i}"
+      end
+          </code></pre>
+          <p>The loop has three parts:</p>
+          <ul>
+            <li>The collection that will be looped through, in this case a range- "(5..10)"</li>
+            <li>The name to give each element when the loop begins again - "i" - in the pipes "| |" </li>
+            <li>The code to execute with the element - the puts statement</li>
+          </ul>
+          <!-- <p>We will revisit the each loop when we have a better understanding of collections.</p> -->
+        </section>
+
+        <section>
+          <h3>Ranges</h3>
+          <pre><code class="ruby">
+        inclusive_range = (1..3)  # contains 1, 2, 3
+        exclusive_range = (1...3) # contains 1, 2
+        letter_range = ('a'..'e') # contains 'a', 'b', 'c', 'd', 'e'
+          </code></pre>
+          <ul>
+            <li>Ranges are the range of values between the given first and last elements.</li>
+            <li><strong>Inclusive</strong> ranges have two dots, and include the last element. <strong>Exclusive</strong> ranges have three dots, and do not include the last element.</li>
+            <li>Ranges need to be defined from lowest value to highest.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+            <li>Create a program which will list out the numbers 25 through 35, each multiplied by themselves.</li>
+            <li>Use a loop!</li>
+            <li>You can use the next slide as an example.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Let's Develop It: Example</h3>
+          <pre><code class="fragment ruby">
+        # multiplication.rb
+
+        (25..35).each do |num|
+          puts "#{ num } multiplied by itself is #{ num * num }"
+        end
+          </code></pre>
+          <!-- <p>Learn more about loops in Ruby <a href="http://www.tutorialspoint.com/ruby/ruby_loops.htm" alt="Loops tutorial">here</a>.</p> -->
+        </section>
+
+        <section>
+          <h3>Keep Learning!</h3>
+          <ul>
+            <li><a href="http://tryruby.org/levels/1/challenges/0">Try Ruby</a>: 15 Minute Interactive Tutorial</li>
+            <li><a href="http://www.codecademy.com/en/goals/web-beginner-en-ymqg0">Sun, Earth and Code</a>: CodeCademy</li>
+            <li><a href="https://github.com/Ada-Developers-Academy/jump-start">Ada Developers Academy Jump Start</a></li>
+            <li><a href="http://learnrubythehardway.org/book/">Learn Ruby The Hard Way</a></li>
+          </ul>
+        </section>
+
       </div>
       <footer>
         <div class="copyright">
           Intro to Ruby
+          Presented by <a href="twitter.com/karianneban">Kari</a>
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
         </div>
+        <div>
+
       </footer>
     </div>
 
